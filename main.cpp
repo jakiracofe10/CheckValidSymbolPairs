@@ -14,7 +14,7 @@ bool checkChar(char c, char stringChar) {
     return false;
 }
 
-//Logic: every closing char must match last open char in stack for exp to be valid pairs
+//Logic: every closing char must match last open char in stack for exp to have valid pairs
 bool checkSymbolPairs(string s) {
     stack<char> symbols;
     int quoteCount = 0;
