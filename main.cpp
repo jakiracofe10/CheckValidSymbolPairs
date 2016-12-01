@@ -3,6 +3,9 @@
 
 using namespace std;
 
+//Time: O(n)
+//Space: O(n)
+
 //Check c and stringChar make a correct pair
 bool checkChar(char c, char stringChar) {
     if (stringChar == ')' && c =='(')
