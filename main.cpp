@@ -29,7 +29,7 @@ bool checkSymbolPairs(string s) {
                 return false;
         }
         if (s[i] == '"')
-            quoteCount++; //quote char must be even to be valid
+            quoteCount++; //quote count must be even to be valid
     }
     if (quoteCount%2 != 0)
         return false;
