@@ -23,11 +23,11 @@ bool checkSymbolPairs(string s) {
     int quoteCount = 0;
     for (int i=0; i<s.length(); i++) {
         if (s[i] == '(' || s[i] == '[' || s[i] == '{')
-            s.push_back(s[i]); //push open char onto stack
+            symbols.push(s[i]); //push open char onto stack
         else if (s[i] == ')' || s[i] == ']' || s[i] == '}') {
-            char c = s.back();
+            char c = symbols.top();
             if (checkChar(c,s[i]))
-                s.pop_back(); //if correct pair, remove last open from stack
+                symbols.pop(); //if correct pair, remove last open from stack
             else
                 return false;
         }
@@ -41,8 +41,8 @@ bool checkSymbolPairs(string s) {
 }
 
 int main() {
-    //string input = "\"[()]{}{[()()]()}\"";
-    string input = "[()]{}{[()()]()}";
+    string input = "\"[()]{}{[()()]()}\"";
+    //string input = "[()]{}{[()()]()}";
     //string input = "[(])";
     bool result = checkSymbolPairs(input);
     string output = result ? "valid" : "not valid";
